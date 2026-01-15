@@ -12,12 +12,12 @@
 </head>
 <body>
     <h1>Bat Ball Stump Game</h1>
-    <button oclick=" 
-    generateComputerChoice()
+    <button onclick=" 
+    let computerChoice = generateComputerChoice()
 
     let resultMsg;
     if (computerChoice === 'Ball'){
-        console.log('User won.')
+        resultMsg = 'user won'
     }
     else if (computerChoice === 'Bat')
     {
@@ -27,9 +27,10 @@
     {
     resultMsg = 'Computer has won' 
     }
-    alert(` You chosen Ball.Computer chosen ${computerChoice} and ${resultMsg}`);">Bat</button>
+    alert(` You chosen Bat.Computer chosen ${computerChoice} and ${resultMsg}`);">Bat</button>
 
-    <button   oclick=" generateComputerChoice();
+    <button   onclick=" 
+    let computerChoice=generateComputerChoice();
    
     let resultMsg;
     if (computerChoice === 'Ball'){
@@ -45,11 +46,12 @@
     }
     alert(`You have chosen Ball.computer chosen ${computerChoice} and ${resultMsg}`);">Ball</button>
 
-    <button oclick=" generateComputerChoice();
+    <button onclick=" 
+    let computerChoice=generateComputerChoice();
 
     let resultMsg;
     if (computerChoice === 'Ball'){
-        resultMsg=Computer has won;
+        resultMsg = Computer has won;
     }
     else if (computerChoice === 'Bat')
     {
@@ -63,25 +65,24 @@
     alert(`You have chosen Stump.Computer choice is  ${computerChoice} and ${resultMsg}`);">Stump</button>
 
     <script>
-    let computerChoice;
     function generateComputerChoice() {
      // This will generate random number between 0 and 3 
-    
+    let computerChoice;
+
     let randomNumber = Math.random() * 3;
     if(randomNumber > 0 && randomNumber <=1){
-        computerChoice ='Bat';
+        return 'Bat';
         //console.log('computer choice is bat')
     }
     else if (randomNumber > 1 && randomNumber <=2)
     {
-        computerChoice ='Ball';
+        return 'Ball';
        // console.log('computer choice is Ball')
     }else {
-        computerChoice = 'Stump';
+        return 'Stump';
        // console.log('computer choice is Stump')
 
     }
- 
     }
     </script>
 </body>
