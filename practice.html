@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>practice</title>
+</head>
+<body>
+
+    <script>
+        //ternary operate 
+        /*
+        let age = 12;
+        let result ;
+        if(age > 18)
+        {
+            result = 'Adult';
+        }
+        else
+        {
+            result = 'kid';
+        }
+        console.log(result)
+
+        let result2 = age > 18 ? 'Adult':'kid';    // one line if-else condition statement 
+        console.log(result2)
+
+            //Guard operator is value  || defualtValue
+
+          //  let age;
+            let finalAge = age || 18 ; // ans 18 because of age are undefined
+            console.log(age);
+            console.log(finalAge)*/
+
+        //let age = 21;
+       // let gender = 'male' ;
+       /* 
+        if (age < 5)
+        {
+            console.log('children wil get free ticket')
+        }
+       else if(gender === 'female'){
+            console.log('you will get 50% off')
+        }
+        else if (8 >=  age )
+        {
+            console.log('children will get half ticket')
+        }
+        else if (65 < age ){
+            console.log("get 30 % discount because of you age is grater then 65")
+        }
+        else
+        {
+            console.log("discount you get zero")
+        }
+            */
+
+        let age = 21;
+        console.log('Your age is ${age}');
+        age = 76;
+        console.log(`Your age is ${age}`);
+        age = 23;
+        console.log(`Your age is ${age}`);
+
+        function isOdd(number){
+            let rem = number % 2;
+            let isOdd = rem == 1;
+            return isOdd;
+        }
+        console.log(isOdd(4));
+        console.log(isOdd(5));
+        console.log(isOdd(6));
+        
+        function larger(num1, num2){
+            if(num1 > num2){
+                return num1;
+            }else{
+                return num2;
+            }
+        }
+        console.log(larger(6,5));
+        console.log(larger(5,5));
+
+        function toFahrenheit(celsiusValue){
+            return 9/5 * celsiusValue + 32;
+        }
+
+
+        // objects
+
+        let product ={
+            company:'Mango',
+            price:564,
+            item_name:'T-shirt',
+        };
+        console.log(product);
+        console.log(product.company);
+        console.log(product.item_name);
+
+        let product1 = {            // nested objects it contains the method , objected , function
+            company:'mango',
+            price:334,
+            'item-name':'T-shirt',
+            displayPrice:function(){
+                console.log(`Price of the product is ${this.price}`)
+            }
+        };
+        product.displayPrice;
+        
+
+        // Autoboxing  concept
+
+        console.log('Jindagi mai KG Coding'.length);
+        console.log('jo chahiye O milega kya ? or nahi mila To mai etana success hojaga fir bhi nahi molega muje kiyyyyy'.toUpperCase());
+        console.log('jindagi mai KG Coding'.replace('KG','jo chahiye O milega kya '))
+
+        let a = 5 ;
+        let b = a ;
+
+        console.log(`a = ${a} , b = ${b}`);  // this is premative  this only copy value
+        a = 8 ;
+        console.log(`a = ${a},b = ${b}`);
+
+        let x = {num : 5};
+        let y = x;
+        console.log(`x = ${x.num}, y = ${y.num}`);  // will get reference change in both value
+
+        let p={pop : 'mahi'}
+
+
+        let product3 = {
+            company1:'mango',
+            price1 : 4532,
+            
+        }
+        let {company1,price1} = product;
+        console.log(company1);
+        console.log(price1);
+
+    </script>
+    
+</body>
+</html>
