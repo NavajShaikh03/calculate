@@ -35,6 +35,13 @@
             user_win : 0,
             computer_win :0,
             tie : 0,
+            displayScore: function() {    // object method using
+                return `   Score is :
+                            user_win: ${score.user_win},
+                            computer_win: ${score.computer_win},
+                            tie: ${score.tie}`;
+                                                
+            }
         };
 
     function generateComputerChoice() {
@@ -91,10 +98,8 @@
     function ShowResult(userMove,computerMove,result){
         alert(`You have chosen ${userMove}.computer choice is ${computerMove} 
         ${result}
-        Score is :
-        user_win: ${score.user_win},
-        computer_win: ${score.computer_win},
-        tie: ${score.tie}`);
+        
+        ${score.displayScore()}`);       // simple the object 
         
     }
     </script>
