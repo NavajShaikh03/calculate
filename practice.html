@@ -137,6 +137,47 @@
         console.log(company1);
         console.log(price1);
 
+
+        // practice
+
+        let product2 = {
+            name:'Jeans',
+            size:'S',
+            fit:'Slim Fit',
+            'delivery-time':'Same day delivery',
+        };
+
+        // reference
+
+        let copyProduct = product2;
+        console.log(product2);
+        copyProduct.size ='M';
+        console.log(product2);
+        copyProduct.fit = 'Regular Fit';
+        console.log(product2);
+        
+        console.log(product['delivery-time']);   // dot notation are not use 
+
+        let obj = {
+            message:'Good Job',
+            status:'Complete',
+        };
+
+        console.log(obj);
+        let {message, status} = obj;
+        console.log(massage);
+        console.log(status);
+
+        function isIdenticalProduct(product3 , product5)
+        {
+            if (product3 ==product5 ){     // if both are product same the return
+                return true;
+            }
+
+            if(typeof product3 !== 'object')
+        }
+        
+
     </script>
     
 </body>
