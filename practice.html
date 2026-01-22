@@ -164,18 +164,51 @@
         };
 
         console.log(obj);
-        let {message, status} = obj;
-        console.log(massage);
+        let {message, status} = obj;   // d- structure
+        console.log(message);
         console.log(status);
 
         function isIdenticalProduct(product3 , product5)
         {
-            if (product3 ==product5 ){     // if both are product same the return
+            if(typeof product3 !== 'object' || typeof product !== 'object'){
+            console.warn('Parameter passed was not an object');
+            return false; 
+            }
+            if (product3 == product5 ){     // if both are product same the return
                 return true;
             }
 
             if(typeof product3 !== 'object')
+
+            if(product1.name === product2.name && 
+                product1.size === product2.size &&
+                product1.fit === product2.fit ){
+                return true;
+            }else{
+                return false;
+            }
         }
+
+        let product3 = {
+            name : 'Jeans',
+            size : 'M',
+            fit  : 'Slim Fit',
+            'delivery-time' : 'Same day delivery',
+        };
+
+        let product5 = {
+            name : 'Jeans',
+            size : 'M',
+            fit : 'Slim Fit ',
+            'delivery-time' : 'Same day delivery',
+        }
+
+        console.log(isIdenticalProduct(product,''));
+        console.log(isIdenticalProduct(product , product));
+        console.log(isIdenticalProduct(product5, product3));
+        console.log(isIdenticalProduct(product3, product2))
+        
+
         
 
     </script>
