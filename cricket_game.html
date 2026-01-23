@@ -27,24 +27,41 @@
     let resultMsg = getResult('Stump',computerChoice);
     ShowResult('Stump',computerChoice,resultMsg);">Stump</button>
 
+    <button onclick="localStorage.clear()
+    resetScore();">Reset Score</button>
+
     <script>
 
         // add new features like add score of user and computer
 
-        let score = {
+        let scoreStr = localStorage.getItem('Score');
+        let score ;
+        resetScore(scoreStr);
+        /*if(scoreStr !== undefined){
+            score = JSON.parse(scoreStr);
+        } else{
+            score = {
             user_win : 0,
             computer_win :0,
             tie : 0,
-            displayScore: function() {    // object method using
-                return `   Score is :
-                            user_win: ${score.user_win},
-                            computer_win: ${score.computer_win},
-                            tie: ${score.tie}`;
-                                                
-            }
-        };
+            };
+        }*/
 
-    function generateComputerChoice() {
+        function resetScore(scoreStr){
+            score = scoreStr ? JSON.parse(scoreStr) : {      // ternary opretter
+                    user_win : 0,
+                    computer_win :0,
+                    tie : 0,
+            }
+        }
+       score.displayScore = function() {    // object method using
+            return `   Score is :
+                        user_win: ${score.user_win},
+                        computer_win: ${score.computer_win},
+                        tie: ${score.tie}`};
+                                            
+
+    function generateComputerChoice(){
     let randomNumber = Math.random() * 3;    // This will generate random number between 0 and 3
     if(randomNumber > 0 && randomNumber <=1){
         return 'Bat';
@@ -96,6 +113,7 @@
     }
     
     function ShowResult(userMove,computerMove,result){
+        localStorage.setItem('Score',JSON.stringify(score));   // score is object store in localStorage
         alert(`You have chosen ${userMove}.computer choice is ${computerMove} 
         ${result}
         
