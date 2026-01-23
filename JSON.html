@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <h1>JSON</h1>
+    <button>Hello Mahi</button>
+    <script>
+        
+        let product = {
+            name : 'TShirt',
+            price:345,
+            rating:{
+                noOfReview:1234,
+            },
+        }
+        console.log(typeof product); 
+        console.log(product);
+        let str = JSON.stringify(product);   //convert in object
+        console.log(typeof str);
+        console.log(str)
+
+        let newProduct = JSON.parse(str);  // convert str in object
+        console.log(typeof newProduct);
+        console.log(newProduct);
+
+        // store the data in key and value 
+
+        localStorage.setItem('Name','Hi Navaj');  // store the data in key value pairs only string can store 
+        localStorage.setItem('Name','Hi Mahi');
+
+        console.log(localStorage.getItem('Name'));
+        localStorage.setItem('product',JSON.stringify(product));   // store the data of key and value in string 
+        console.log(localStorage.getItem('product'));
+        let product2 = JSON.parse(localStorage.getItem('product')); // Data store in the object because of parse
+        console.log(product2);
+
+
+
+      
+        // add delete item in local localStorage
+        
+        localStorage.removeItem('Price');
+        localStorage.clear();
+        
+
+
+
+    </script>
+</body>
+</html>
