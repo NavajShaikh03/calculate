@@ -30,6 +30,11 @@
     <button onclick="localStorage.clear()
     resetScore();">Reset Score</button>
 
+    <h3 id="user-move"></h3>
+    <h3 id="computer-move"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+
     <script>
 
         // add new features like add score of user and computer
@@ -55,12 +60,9 @@
             }
         }
        score.displayScore = function() {    // object method using
-            return `   Score is :
-                        user_win: ${score.user_win},
-                        computer_win: ${score.computer_win},
-                        tie: ${score.tie}`};
+            return ` 
+            Score is :user_win: ${score.user_win},computer_win: ${score.computer_win},tie: ${score.tie}`};
                                             
-
     function generateComputerChoice(){
     let randomNumber = Math.random() * 3;    // This will generate random number between 0 and 3
     if(randomNumber > 0 && randomNumber <=1){
@@ -114,11 +116,17 @@
     
     function ShowResult(userMove,computerMove,result){
         localStorage.setItem('Score',JSON.stringify(score));   // score is object store in localStorage
-        alert(`You have chosen ${userMove}.computer choice is ${computerMove} 
-        ${result}
+
+        document.querySelector('#user-move').innerText =
+        userMove !== undefined ? `You have chosen ${userMove}.` : '';
+
+        document.querySelector('#computer-move').innerText =
+        computerMove !== undefined ? `computer choice is ${computerMove} `:'';
+
+        document.querySelector('#result').innerText =
+        result !== undefined ? result : '';
         
-        ${score.displayScore()}`);       // simple the object 
-        
+        document.querySelector('#score').innerText = score.displayScore();
     }
     </script>
 </body>
