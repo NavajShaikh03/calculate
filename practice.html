@@ -209,7 +209,24 @@
         console.log(isIdenticalProduct(product3, product2))
         
 
-        
+        // Exsercise of JSON  concept
+
+        function doGreeting(personName = 'Dear'){
+            let date = new Date();
+            let hours = date.getHours();
+            //let hours = 20
+            let heading = document.querySelector('#greeting');
+
+            if (hours > 5 && hours < 12){
+                heading.innerText = `Good Morning ${personName}`;
+            }else if (hours > 12 && hours < 18){
+                heading.innerText = `Good Afternoon ${personName}`;
+            } else {
+                heading.innerText = `Good Night ${personName}`;
+            }
+        }
+
+        doGreeting('mahi')
 
     </script>
     
