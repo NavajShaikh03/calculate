@@ -54,7 +54,7 @@
             console.log("discount you get zero")
         }
             */
-
+/*
         let age = 21;
         console.log('Your age is ${age}');
         age = 76;
@@ -206,7 +206,7 @@
         console.log(isIdenticalProduct(product,''));
         console.log(isIdenticalProduct(product , product));
         console.log(isIdenticalProduct(product5, product3));
-        console.log(isIdenticalProduct(product3, product2))
+        console.log(isIdenticalProduct(product3, product5))
         
 
         // Exsercise of JSON  concept
@@ -226,7 +226,162 @@
             }
         }
 
-        doGreeting('mahi')
+        doGreeting('mahi'); 
+        */
+
+
+        // Array concept here
+
+        let numbers = [1,2,3,4,5,6,7,8];  // array cam hold any value
+        console.log(numbers);
+
+        let arr = [1,2,3,4,5]
+        console.log(arr);
+        arr.push(6);
+        console.log(arr);
+        console.log('popped' + arr.pop());  // push and pop are used in end of array and same as shift/unshift
+        console.log(arr);
+        console.log('popped' + arr.pop());
+        console.log(arr);
+        console.log(arr.splice(1,2));
+        console.log(arr.toString());
+        arr.sort();
+        console.log(arr);
+        console.log(arr.valueOf());
+
+        let arr2 = arr;
+        arr2[0] = 99;
+        console.log(arr);  //not a copy this reference
+
+
+        let [a,b,c,d] = arr;
+        console.log(a + " " + b + " " + c + " " + d);
+
+        // Loop concept
+
+        let num = 1;
+        while (num <= 10){   // condition
+            console.log(num);
+            num = num + 1;
+        }
+
+        let x = 0;
+        while(x < 1){
+            console.log(x);
+            x = Math.random() * 2;
+        }
+
+        console.log('finale vale of  x is:' +  x);
+
+
+        let num1 = 0;
+        do {
+            console.log(num1);
+            num1++;
+        }while(num1 < 5 );
+
+        // for Loop
+        for(let mahi = 1; mahi <= 10; mahi++){
+            console.log(mahi);
+        }
+
+        let nums = [2,3,4,2,2,2,21,2];   // array
+        for(let index = 0 ; index < nums.length; index++){
+            console.log(nums[index]);
+        }
+
+        //accumulater
+
+        let addition = [3,4,2,24];
+        let sum =0;
+        for(let i=0;  i < addition.length; i++){
+            sum = sum + addition[i];
+        }
+        console.log('sum is : ' , sum);
+
+        let squares = [];
+        for(let i = 0; i < nums.length; i++){
+            squares[i] = nums[i] * nums[i];
+           // squares.push(nums[i] * nums[i]); // same of the above line
+        }
+        console.log(squares);
+
+
+        // break and continue
+        let arr1 = [2,3,2,1,2,3,2,8,7,4]
+        for (let i =0; i< 50; i++){
+
+            if(arr1[i] === 8){
+                console.log(`Number found at index ${i}`);
+                break;
+            }
+
+        }
+
+        for(let i=1; i <= 25; i++){
+            if(i % 2 == 0){
+                continue;  // skep the even number
+            }
+            console.log(i);
+        }
+
+        let s =[5,6];
+        s.unshift(4);
+        s.push(7);
+        console.log(s);
+
+        // return the element at the position 
+        function getElement(a, position){
+            return a[position - 1];
+        }
+        let ab = [1,2,3,4,5,6,7,8,9];
+        console.log(getElement(ab,1));
+
+
+ 
+        // copy arr
+        function arrCopy(arr){
+            return arr.slice(0, arr.length);
+        }
+        let n = [ 4,3,5,32,1];
+        let n2 = arrCopy(n);
+        n[0] = null;
+        console.log(n);
+        console.log(n2)
+ 
+        // prime no.
+        function isPrime(num){
+            for(let i=2; i < num; i++){
+                if(num % i === 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(isPrime(11));
+
+        let num = 2;
+        let i =0;
+        while(i < 10){
+            if(isPrime(num))
+            {
+                console.log(num);
+                i++;
+                if(i >= 5)
+                {
+                    break;
+                }
+            }
+            num++;
+        }
+
+
+        for(let i = 10; i>0; i--);
+        {
+
+            console.log(10-i)
+        }
+
 
     </script>
     
